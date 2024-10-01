@@ -10,7 +10,7 @@ def union(A, B):
         A_value = A[A_key]
         B_value = B[B_key]
     
-        if A_value > B_value:
+        if A_value < B_value:
             X[A_key] = A_value
         else:
             X[B_key] = B_value
