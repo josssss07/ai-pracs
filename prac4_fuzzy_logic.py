@@ -10,7 +10,7 @@ def union(A, B):
         A_value = A[A_key]
         B_value = B[B_key]
 
-        X[A_key] = max(A[key], B[key])
+        X[A_key] = max(A[A_key], B[B_key])
         # if A_value < B_value:
         #     X[A_key] = A_value
         # else:
@@ -25,7 +25,7 @@ def intersection(A, B):
         A_value = A[A_key]
         B_value = B[B_key]
 
-        X[A_key] =  min(A[key], B[key])
+        X[A_key] =  min(A[A_key], B[B_key])
         # if A_value < B_value: 
         #     X[B_key] = B_value
         # else: 
@@ -50,6 +50,13 @@ def difference(A, B):
         else: 
             X[B_key] = B_value
 
+def alphaCut(A, b):
+    result = []
+    for a_key, a_val in A: 
+        if a_val > b:
+            result.append(a_key)
+    return result
+
 
 #load up A and B with data
 A = {"a": 0.2, "b": 0.3, "c": 0.6, "d": 0.6}
@@ -61,4 +68,4 @@ print(f'the second fuzzy set is: {B}')
 
 #fuzzy union of set A and B :
 print("union set is: " , union(A, B) )
-
+print(intersection(A, B))
