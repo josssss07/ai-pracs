@@ -9,11 +9,12 @@ def union(A, B):
     for A_key, B_key in zip(A, B):
         A_value = A[A_key]
         B_value = B[B_key]
-    
-        if A_value < B_value:
-            X[A_key] = A_value
-        else:
-            X[B_key] = B_value
+
+        X[A_key] = max(A[key], B[key])
+        # if A_value < B_value:
+        #     X[A_key] = A_value
+        # else:
+        #     X[B_key] = B_value
 
     return X
 
@@ -24,10 +25,11 @@ def intersection(A, B):
         A_value = A[A_key]
         B_value = B[B_key]
 
-        if A_value < B_value: 
-            X[B_key] = B_value
-        else: 
-            X[A_key] = A_value
+        X[A_key] =  min(A[key], B[key])
+        # if A_value < B_value: 
+        #     X[B_key] = B_value
+        # else: 
+        #     X[A_key] = A_value
     return X
 
 #function to compliment 
